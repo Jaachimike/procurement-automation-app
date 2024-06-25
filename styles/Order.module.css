@@ -1,0 +1,84 @@
+.orderContainer {
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  font-weight: bold;
+  border-bottom: 2px solid #333;
+}
+
+.headerItem {
+  flex: 1;
+  text-align: center;
+}
+
+.orderList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.orderItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Center align items vertically */
+  padding: 1rem 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.orderItem:last-child {
+  border-bottom: none;
+}
+
+.orderLink {
+  display: flex;
+  flex: 3; /* Make the link span more space */
+  text-decoration: none;
+  color: inherit;
+}
+
+.itemName,
+.itemQuantity,
+.itemStatus {
+  flex: 1;
+  text-align: center;
+}
+
+.actions {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.editButton {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.editButton:hover {
+  background: #0056b3;
+}
+
+.deleteButton {
+  background: red;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.deleteButton:hover {
+  background: darkred;
+}

@@ -1,0 +1,55 @@
+/* styles/Layout.module.css */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: black;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  background: #333;
+  color: #fff;
+  padding: 1rem;
+}
+
+.navList {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.navList li {
+  display: inline;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  /* background: white; Add white background to main */
+}
+
+.content {
+  padding: 2rem; /* Adjust the padding as needed */
+  background: white;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+  border-radius: 8px; /* Optional: Add border-radius for a rounded corner effect */
+  max-width: 1000px;
+  width: 100%;
+}
+
+.footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
