@@ -33,7 +33,7 @@
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   padding: 1rem;
   /* background: white; Add white background to main */
 }

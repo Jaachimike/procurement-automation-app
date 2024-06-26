@@ -1,5 +1,6 @@
 // components/OrderForm.js
 import React from 'react';
+import styles from '../styles/OrderForm.module.css';
 
 
 const OrderForm = ({form, setForm, handleSubmit}) => {
@@ -11,21 +12,38 @@ const OrderForm = ({form, setForm, handleSubmit}) => {
         });
     };
 
+    // Ensure default value of "Pending" if form.status is not set
+    if (!form.status) {
+        setForm({
+            ...form,
+            status: 'Pending',
+        });
+    }
+
     return (
-        <form onSubmit={handleSubmit}>
-            <div>
+        <form onSubmit={handleSubmit} className={styles.formContainer}>
+            <div className={styles.formGroup}>
                 <label htmlFor="itemName">Item Name</label>
-                <input id="itemName" name="itemName" value={form.itemName} onChange={handleChange} />
+                <input id="itemName" type='text' name="itemName" value={form.itemName} onChange={handleChange} required />
             </div>
-            <div>
+            <div className={styles.formGroup}>
                 <label htmlFor="quantity">Quantity</label>
-                <input id="quantity" name="quantity" value={form.quantity} onChange={handleChange} />
+                <input id="quantity" type='number' name="quantity" value={form.quantity} onChange={handleChange} required />
             </div>
-            <div>
+            <div className={styles.formGroup}>
                 <label htmlFor="status">Status</label>
-                <input id="status" name="status" value={form.status} onChange={handleChange} />
+                <select
+                    id="status"
+                    name="status"
+                    value={form.status}
+                    onChange={handleChange}
+                    required
+                >
+                    <option value="Pending">Pending</option>
+                    <option value="Shipped">Shipped</option>
+                </select>
             </div>
-            <button type="submit">Submit</button>
+            <button type="submit" className={styles.submitButton}>Submit</button>
         </form>
     );
 };

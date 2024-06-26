@@ -2,6 +2,7 @@
 import React, {useEffect, useState} from 'react';
 import {useRouter} from 'next/router';
 import Link from 'next/link';
+import styles from '../styles/OrderDetails.module.css'
 
 const OrderDetails = ({id}) => {
     const router = useRouter();
@@ -40,13 +41,38 @@ const OrderDetails = ({id}) => {
 
     return (
         <div>
-            <h1>Order Details</h1>
-            <p>Item Name: {order.itemName}</p>
-            <p>Quantity: {order.quantity}</p>
-            <p>Status: {order.status}</p>
-            <Link href={`/order/edit/${order.id}`}>Edit Order</Link>
-            <button onClick={handleDelete}>Delete Order</button>
-            <Link href="/">Back to Dashboard</Link>
+            <h1 className={styles.title}>Order Details</h1>
+            <div className={styles.container}>
+                <table className={styles.table}>
+                    <thead>
+                        <tr>
+                            <th>Item Name</th>
+                            <th>Quantity</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{order.itemName}</td>
+                            <td>{order.quantity}</td>
+                            <td>{order.status}</td>
+                            <td>
+                                <div className={styles.actions}>
+                                    <button className={styles.actionButton}>
+                                        <Link href={`/order/edit/${order.id}`}>Edit Order</Link>
+                                    </button>
+                                    <button className={styles.actionButton} onClick={handleDelete}>Delete Order</button>
+                                    <button className={styles.actionButton}>
+                                        <Link href="/">Back to Dashboard</Link>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
         </div>
     );
 };
