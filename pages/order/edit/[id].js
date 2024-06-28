@@ -11,23 +11,24 @@ const EditOrder = () => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        if (id) {
-            fetch(`/api/orders?id=${id}`)
-                .then(res => {
+        const fetchOrder = async () => {
+            if (id) {
+                try {
+                    const res = await fetch(`/api/orders?id=${id}`);
                     if (!res.ok) {
                         throw new Error('Network response was not ok');
                     }
-                    return res.json();
-                })
-                .then(data => {
+                    const data = await res.json();
                     setForm(data);
                     setLoading(false);
-                })
-                .catch(error => {
+                } catch (error) {
                     setError(error.message);
                     setLoading(false);
-                });
-        }
+                }
+            }
+        };
+
+        fetchOrder();
     }, [id]);
 
     const handleSubmit = async (e) => {

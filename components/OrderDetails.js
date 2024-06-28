@@ -11,22 +11,22 @@ const OrderDetails = ({id}) => {
 
     useEffect(() => {
         const fetchOrder = async () => {
-            try {
-                const response = await fetch(`/api/orders?id=${id}`);
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
+            if (id) {
+                try {
+                    const response = await fetch(`/api/orders?id=${id}`);
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    const data = await response.json();
+                    setOrder(data);
+                } catch (error) {
+                    setError(error.message);
+                    // console.log(error);
                 }
-                const data = await response.json();
-                setOrder(data);
-            } catch (error) {
-                setError(error.message);
-                // console.log(error);
             }
         };
 
-        if (id) {
-            fetchOrder();
-        }
+        fetchOrder();
     }, [id]);
 
     const handleDelete = async () => {
