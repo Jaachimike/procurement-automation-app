@@ -1,26 +1,30 @@
 Procurement Automation App
 
-Overview:
 The Procurement Automation App is a full-stack application built using React and Next.js for the frontend and Node.js with Express for the backend. The application allows users to create, view, update, and delete purchase orders. It features a dashboard for listing orders, individual pages for order details, and forms for creating and editing orders. The backend uses an in-memory data structure for storing purchase orders.
 
 Features
-Dashboard: Displays a list of purchase orders with relevant details (order ID, item name, quantity, status).
-Order Details Page: Displays the full details of a purchase order.
-Create Order Page: A form to create a new purchase order.
-Edit Order Page: A form to edit an existing purchase order.
-Delete Order: Ability to delete a purchase order.
 
-Technologies Used:
-Frontend: React, Next.js
-Backend: Node.js, Express
-Styling: CSS Modules
-Testing: Jest, React Testing Library, node-mocks-http
+1. Dashboard: Displays a list of purchase orders with relevant details (order ID, item name, quantity, status).
+2. Order Details Page: Displays the full details of a purchase order.
+3. Create Order Page: A form to create a new purchase order.
+4. Edit Order Page: A form to edit an existing purchase order.
+5. Delete Order: Ability to delete a purchase order.
 
-Installation:
+Technologies Used
+
+1. Frontend: React, Next.js
+2. Backend: Node.js, Express
+3. Styling: CSS Modules
+4. Testing: Jest, React Testing Library, node-mocks-http
+
+Installation
 
 1. Clone the repository:
-   git clone https://github.com/your-username/procurement-automation-app.git
-   cd procurement-automation-app
+
+```bash
+git clone https://github.com/your-username/procurement-automation-app.git
+cd procurement-automation-app
+```
 
 2. Install dependencies:
 
