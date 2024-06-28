@@ -5,7 +5,7 @@ import OrderForm from '../../components/OrderForm';
 
 const CreateOrder = () => {
     const router = useRouter();
-    const [form, setForm] = useState({itemName: '', quantity: '', status: ''});
+    const [form, setForm] = useState({itemName: '', quantity: '', status: 'Pending'});
 
     const handleSubmit = async (e) => {
         e.preventDefault();

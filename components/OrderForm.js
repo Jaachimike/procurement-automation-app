@@ -12,13 +12,6 @@ const OrderForm = ({form, setForm, handleSubmit}) => {
         });
     };
 
-    // Ensure default value of "Pending" if form.status is not set
-    if (!form.status) {
-        setForm({
-            ...form,
-            status: 'Pending',
-        });
-    }
 
     return (
         <form onSubmit={handleSubmit} className={styles.formContainer}>

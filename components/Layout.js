@@ -20,7 +20,7 @@ const Layout = ({children}) => {
                 </div>
             </main>
             <footer className={styles.footer}>
-                <p>Procurement Automation App built by Okafor Jaachi for Barrel App Test Interview</p>
+                <p>Barrel App Technical Test</p>
             </footer>
         </div>
     );
